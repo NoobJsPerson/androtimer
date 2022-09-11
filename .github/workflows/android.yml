@@ -12,13 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Get version
-      id: vars
-      run: echo ::set-output name=version::$(ls)
-    - name: Test output
-      run: echo ${{ steps.vars.outputs.version }}
     - name: Build Android App
       uses: sparkfabrik/android-build-action@v1.2.0
       with: 
-       project-path: ..
+       project-path: .
 
