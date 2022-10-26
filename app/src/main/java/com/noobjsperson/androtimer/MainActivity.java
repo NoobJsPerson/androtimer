@@ -163,7 +163,6 @@ public class MainActivity extends Activity
         // TODO: Implement this method
         super.onActivityResult(requestCode, resultCode, data);
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void seekTo(View view){
         Button button = (Button) view;
         int stepBy = Integer.parseInt(button.getText().toString());
@@ -173,7 +172,10 @@ public class MainActivity extends Activity
         Log.d("STEPBY",""+stepBy);
         Log.d("CURRENTFRAME",""+currentFrame);
         Log.d("AMOUNT",""+amount);
-        mediaPlayer.seekTo(amount, MediaPlayer.SEEK_CLOSEST);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            mediaPlayer.seekTo(amount,MediaPlayer.SEEK_CLOSEST);
+        else
+            mediaPlayer.seekTo(amount); // Polyfill for api versions lower than 26 (android versions lower than 8), seeking might be inaccurate if you fall into this category
     }
 
     private void setClipboard(String text) {
