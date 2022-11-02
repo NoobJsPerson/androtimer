@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">AndroTimer</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="not_set">Not Set</string>
     <!-- Strings used for fragments for navigation -->
 </resources>
