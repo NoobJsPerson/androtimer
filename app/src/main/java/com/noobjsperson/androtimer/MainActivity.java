@@ -82,7 +82,7 @@ public class MainActivity extends Activity
                 try {
                     while (!isInterrupted()) {
                         //noinspection BusyWait
-                        Thread.sleep(20); // every 10s
+                        Thread.sleep(20);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
