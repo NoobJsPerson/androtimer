@@ -18,11 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import androidx.annotation.RequiresApi;
-
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Collections;
+import java.util.Map;
 
 public class MainActivity extends Activity
 {
