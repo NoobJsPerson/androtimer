@@ -46,14 +46,16 @@ jobs:
       - name: Download APK from build
         uses: actions/download-artifact@v1
         with:
-          name: apk  
+          name: apk 
+      - name: Check env
+        run: env
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: Release $GITHUB_RUN_ID
+          tag_name: release_${{ github.run_id }}
           release_name: Release ${{ github.ref }} 
       - name: Upload Release APK
         id: upload_release_asset
