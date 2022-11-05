@@ -53,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
-          tag_name: Release ${{ GITHUB_RUN_ID }}
+          tag_name: Release $GITHUB_RUN_ID
           release_name: Release ${{ github.ref }} 
       - name: Upload Release APK
         id: upload_release_asset
