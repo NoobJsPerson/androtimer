@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="top"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:minWidth="32dp"
+            android:minHeight="48dp"
+            android:id="@+id/urltext"
+            tools:ignore="LabelFor" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/chooseVideoButton"
-        android:text="Choose Video"/>
+        android:text="Import Video from URL"/>
 
+    </LinearLayout>
     <Button
-        android:id="@+id/switchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Use Youtube Video" />
-
-    <VideoView
+        android:text="Go Back"
+        android:id="@+id/goback"/>
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/mainVideoView1"/>
+        android:layout_height="wrap_content"
+        android:id="@+id/ytPlayer" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,7 +66,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:id="@+id/startTextView"
                     android:text="@string/not_set"/>
 
@@ -76,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:id="@+id/endTextView"
                     android:text="@string/not_set"/>
 
@@ -91,9 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="+1"
                     android:lines="1"
                     android:onClick="seekTo"
+                    android:text="+1"
                     android:textSize="15sp"
                     tools:ignore="UsingOnClickInXml" />
 
@@ -121,9 +132,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:text="+50"
                     android:lines="1"
                     android:onClick="seekTo"
-                    android:text="+50"
                     android:textSize="15sp"
                     tools:ignore="UsingOnClickInXml" />
 
@@ -182,8 +193,7 @@
                     android:text="-10"
                     android:lines="1"
                     android:onClick="seekTo"
-                    android:textSize="15sp"
-                    tools:ignore="UsingOnClickInXml" />
+                    android:textSize="15sp"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -225,10 +235,14 @@
                 android:textSize="20sp"/>
 
             <EditText
+                android:id="@+id/finalTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/finalTextView"
-                />
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:minWidth="32dp"
+                android:minHeight="48dp"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
