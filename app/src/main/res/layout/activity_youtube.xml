@@ -31,6 +31,11 @@
         android:layout_height="wrap_content"
         android:text="Go Back"
         android:id="@+id/goback"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App is crashing while trying to load your video? Check if you have the latest version of the YouTube app installed!"
+        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
