@@ -50,6 +50,11 @@ public class MainActivity extends Activity
                     Toast.LENGTH_SHORT).show();
         }
     }
+    private void switchToYTActivity() {
+        Intent switchActivityIntent = new Intent(this, YoutubeActivity.class);
+        startActivity(switchActivityIntent);
+        finish();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -59,6 +64,7 @@ public class MainActivity extends Activity
         final TextView startTw = findViewById(R.id.startTextView);
         final TextView endTw = findViewById(R.id.endTextView);
         Button startButton = findViewById(R.id.startButton);
+        Button switchButton = findViewById(R.id.switchButton);
         Button endButton = findViewById(R.id.endButton);
         Button chooseButton = findViewById(R.id.chooseVideoButton);
         timeTw = findViewById(R.id.timeTextView);
@@ -104,8 +110,12 @@ public class MainActivity extends Activity
                 startTw.setText(formatTime(start));
                 updateTotalTime();
             }
-
-
+        });
+        switchButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchToYTActivity();
+            }
         });
         endButton.setOnClickListener(new OnClickListener(){
 
@@ -117,17 +127,13 @@ public class MainActivity extends Activity
                 endTw.setText(formatTime(end));
                 updateTotalTime();
             }
-
-
         });
         chooseButton.setOnClickListener(new OnClickListener(){
-
             @Override
             public void onClick(View p1)
             {
                 showFileChooser();
             }
-
         });
 
     }
